@@ -5,7 +5,6 @@
  */
 package Main;
 
-import Satuan.FormSatuan;
 
 /**
  *
@@ -164,7 +163,7 @@ public class Form extends javax.swing.JFrame {
 
     private void menuItemSatuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSatuanActionPerformed
         // TODO add your handling code here:
-        new FormSatuan().setVisible(true);
+        
     }//GEN-LAST:event_menuItemSatuanActionPerformed
 
     /**
