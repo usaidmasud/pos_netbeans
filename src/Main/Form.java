@@ -5,6 +5,8 @@
  */
 package Main;
 
+import Satuan.FormSatuan;
+
 /**
  *
  * @author usaid
@@ -82,6 +84,11 @@ public class Form extends javax.swing.JFrame {
         menuMaster.add(menuItemBarang);
 
         menuItemSatuan.setText("Satuan");
+        menuItemSatuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemSatuanActionPerformed(evt);
+            }
+        });
         menuMaster.add(menuItemSatuan);
 
         menuItemJabatan.setText("Jabatan");
@@ -154,6 +161,11 @@ public class Form extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuItemSatuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSatuanActionPerformed
+        // TODO add your handling code here:
+        new FormSatuan().setVisible(true);
+    }//GEN-LAST:event_menuItemSatuanActionPerformed
 
     /**
      * @param args the command line arguments
