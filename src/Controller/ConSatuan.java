@@ -19,18 +19,55 @@ import java.util.List;
 public class ConSatuan {
     FormSatuan form;
     List<Satuan> mlist;
-    IntSatuan DAO;
+    IntSatuan dAO;
 
     public ConSatuan(FormSatuan form) {
         this.form = form;
-        DAO = new ImplSatuan();
-        mlist = DAO.get_all();
+        dAO = new ImplSatuan();
+        mlist = dAO.get_all();
         dataTable();
     }
     
     public void dataTable() {
         TableSatuan table = new TableSatuan(mlist);
         form.getTable().setModel(table);
+    }
+    
+    public void kosong() {
+        form.getTextSatuan().setText("");
+    }
+    
+    public void isi_field(int row) {
+        form.getTextSatuan().setText(mlist.get(row).getNama_satuan());
+    }
+    
+    private boolean cekField() {
+        boolean hasil = false;
+        if (form.getTextSatuan().getText() == null || form.getTextSatuan().getText() == "") {
+            hasil = false;
+        } else hasil = true;
+        return hasil;
+    }
+    
+    public void insert() {
+        if (cekField()) {
+            Satuan s = new Satuan();
+            s.setNama_satuan(form.getTextSatuan().getText());
+            dAO.insert(s);
+        }
+    }
+    
+    public void update() {
+        if (cekField()) {
+            Satuan s = new Satuan();
+            s.setNama_satuan(form.getTextSatuan().getText());
+            dAO.update(s);
+        }
+    }
+    
+    public void delete() {
+        int row = form.getTable().getSelectedRow();
+        dAO.delete(row);
     }
     
     
