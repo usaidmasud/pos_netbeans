@@ -5,7 +5,7 @@
  */
 package Table;
 
-import Model.Satuan;
+import Entity.Satuan;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 

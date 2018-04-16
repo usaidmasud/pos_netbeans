@@ -5,7 +5,7 @@
  */
 package Interface;
 
-import Model.Satuan;
+import Entity.Satuan;
 import java.util.List;
 
 /**
@@ -18,4 +18,5 @@ public interface IntSatuan {
     public void delete(int keyWord);
     public List<Satuan> get_all();
     public List<Satuan> get_by_keyword(String keyWord);
+    public boolean cek_nama_satuan(String keyWord);
 }

@@ -6,47 +6,48 @@
 package Implement;
 
 import Database.ConnectDB;
-import Entity.Satuan;
+import Entity.Supplier;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author mediatama
+ * @author usaid
  */
-public class ImplSatuan implements Interface.IntSatuan{
-    
+public class ImplSupplier implements Interface.IntSupplier{
     Connection connection;
-    final String insert = "INSERT INTO tb_satuan (nama_satuan) VALUES (?);";
-    final String update = "UPDATE tb_satuan set nama_satuan = ? where kode_satuan = ? ;";
-    final String delete = "DELETE FROM tb_satuan where kode_satuan = ? ;";
-    final String select = "SELECT * FROM tb_satuan;";
-    final String carinama = "SELECT * FROM tb_satuan where nama_satuan like ?";
+    final String insert = "INSERT INTO tb_supplier (kode_supplier, nama_supplier, no_telpon, alamat) VALUES (?, ?, ?, ?);";
+    final String update = "UPDATE tb_supplier set kode_supplier = ?, nama_supplier = ?, no_telpon =? , alamat = ? where kode_supplier = ? ;";
+    final String delete = "DELETE FROM tb_supplier where kode_supplier = ? ;";
+    final String select = "SELECT * FROM tb_supplier;";
+    final String carinama = "SELECT * FROM tb_supplier where nama_supplier like ?";
     
     PreparedStatement ps;
     Statement st;
     ResultSet rs;
-    List<Satuan> mlist;
+    List<Supplier> mlist;
     
-    public ImplSatuan() {
+    public ImplSupplier() {
         connection = ConnectDB.connection();
     }
     
     
     @Override
-    public void insert(Satuan satuan) {
+    public void insert(Supplier sup) {
         ps = null;
         try {
             ps = connection.prepareStatement(insert);
-            ps.setString(1, satuan.getNama_satuan().toUpperCase());
+            ps.setString(1, sup.getKode_supplier());
+            ps.setString(2, sup.getNama_supplier().toUpperCase());
+            ps.setString(3, sup.getNo_telpon());
+            ps.setString(4, sup.getAlamat());
             ps.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -60,12 +61,14 @@ public class ImplSatuan implements Interface.IntSatuan{
     }
 
     @Override
-    public void update(Satuan satuan) {
+    public void update(Supplier sup) {
         ps = null;
         try {
             ps = connection.prepareStatement(update);
-            ps.setString(1, satuan.getNama_satuan().toUpperCase());
-            ps.setInt(2, satuan.getKode_satuan());
+            ps.setString(1, sup.getNama_supplier().toUpperCase());
+            ps.setString(2, sup.getNo_telpon());
+            ps.setString(3, sup.getAlamat());
+            ps.setString(4, sup.getKode_supplier());
             ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -80,11 +83,11 @@ public class ImplSatuan implements Interface.IntSatuan{
     }
 
     @Override
-    public void delete(int keyWord) {
+    public void delete(String keyWord) {
         ps = null;
         try {
             ps = connection.prepareStatement(delete);
-            ps.setInt(1, keyWord);
+            ps.setString(1, keyWord);
             ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -99,68 +102,51 @@ public class ImplSatuan implements Interface.IntSatuan{
     }
 
     @Override
-    public List<Satuan> get_all() {
+    public List<Supplier> get_all() {
         mlist = null;
         try {
-            mlist = new ArrayList<Satuan>();
+            mlist = new ArrayList<Supplier>();
             st = connection.createStatement();
             rs = st.executeQuery(select);
             while (rs.next()) {
-                Satuan obj = new Satuan();
-                obj.setKode_satuan(rs.getInt("kode_satuan"));
-                obj.setNama_satuan(rs.getString("nama_satuan"));
+                Supplier obj = new Supplier();
+                obj.setKode_supplier(rs.getString("kode_supplier"));
+                obj.setNama_supplier(rs.getString("nama_supplier"));
+                obj.setNo_telpon(rs.getString("no_telpon"));
+                obj.setAlamat(rs.getString("alamat"));
                 obj.setTgl_create(rs.getString("tgl_create"));
                 obj.setTgl_update(rs.getString("tgl_update"));
                 mlist.add(obj);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ImplSatuan.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ImplSupplier.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return mlist;
     }
 
     @Override
-    public List<Satuan> get_by_keyword(String keyWord) {
+    public List<Supplier> get_by_keyword(String keyWord) {
         mlist = null;
         try {
-            mlist = new ArrayList<Satuan>();
+            mlist = new ArrayList<>();
             ps = connection.prepareStatement(carinama);
             ps.setString(1, "%" + keyWord + "%");
-            ResultSet rs = ps.executeQuery();
+            rs = ps.executeQuery();
             while (rs.next()) {
-                Satuan obj = new Satuan();
-                obj.setKode_satuan(rs.getInt("kode_satuan"));
-                obj.setNama_satuan(rs.getString("nama_satuan"));
+                Supplier obj = new Supplier();
+                obj.setKode_supplier(rs.getString("kode_supplier"));
+                obj.setNama_supplier(rs.getString("nama_supplier"));
+                obj.setNo_telpon(rs.getString("no_telpon"));
+                obj.setAlamat(rs.getString("alamat"));
                 obj.setTgl_create(rs.getString("tgl_create"));
                 obj.setTgl_update(rs.getString("tgl_update"));
                 mlist.add(obj);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ImplSatuan.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ImplSupplier.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return mlist;
     }
-
-    @Override
-    public boolean cek_nama_satuan(String keyWord) {
-        boolean cek = false;
-        try {
-            mlist = new ArrayList<Satuan>();
-            ps = connection.prepareStatement(carinama);
-            ps.setString(1, keyWord);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                cek = true;
-            } else cek = false;
-        } catch (SQLException ex) {
-            Logger.getLogger(ImplSatuan.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return cek;
-    }
-    
-    
-    
 }
