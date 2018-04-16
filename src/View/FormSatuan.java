@@ -91,7 +91,7 @@ public class FormSatuan extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pack();
+        setBounds(0, 0, 311, 285);
     }// </editor-fold>//GEN-END:initComponents
 
     public JTable getTable() {
