@@ -3,19 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Main;
+package View;
+
+import java.beans.PropertyVetoException;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 
 
 /**
  *
  * @author usaid
  */
-public class Form extends javax.swing.JFrame {
+public class MainForm extends javax.swing.JFrame {
 
     /**
      * Creates new form Form
      */
-    public Form() {
+    public MainForm() {
         initComponents();
     }
 
@@ -28,6 +32,7 @@ public class Form extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        DesktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
         menuItemCustomer = new javax.swing.JMenuItem();
@@ -57,6 +62,17 @@ public class Form extends javax.swing.JFrame {
         menuLaporanPiutang = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout DesktopPaneLayout = new javax.swing.GroupLayout(DesktopPane);
+        DesktopPane.setLayout(DesktopPaneLayout);
+        DesktopPaneLayout.setHorizontalGroup(
+            DesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 477, Short.MAX_VALUE)
+        );
+        DesktopPaneLayout.setVerticalGroup(
+            DesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 248, Short.MAX_VALUE)
+        );
 
         menuFile.setText("File");
 
@@ -151,11 +167,11 @@ public class Form extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 494, Short.MAX_VALUE)
+            .addComponent(DesktopPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addComponent(DesktopPane)
         );
 
         pack();
@@ -163,6 +179,26 @@ public class Form extends javax.swing.JFrame {
 
     private void menuItemSatuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSatuanActionPerformed
         // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form Satuan")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormSatuan form1=new View.FormSatuan();
+              DesktopPane.add(form1);  
+              form1.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }  
         
     }//GEN-LAST:event_menuItemSatuanActionPerformed
 
@@ -183,14 +219,38 @@ public class Form extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+
+        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Form().setVisible(true);
+//            }
+//        });
+        //</editor-fold>
+
+        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Form().setVisible(true);
+//            }
+//        });
+        //</editor-fold>
+
+        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Form().setVisible(true);
+//            }
+//        });
         //</editor-fold>
 
         /* Create and display the form */
@@ -202,6 +262,7 @@ public class Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane DesktopPane;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu menuFile;
     private javax.swing.JMenuItem menuItemBarang;
