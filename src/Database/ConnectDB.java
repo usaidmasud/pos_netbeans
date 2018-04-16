@@ -19,7 +19,7 @@ public class ConnectDB {
     public static Connection connection() {
         if (con == null) {
             MysqlDataSource data = new MysqlDataSource();
-            data.setDatabaseName("db_crud");
+            data.setDatabaseName("rc_pos");
             data.setUser("root");
             data.setPassword("");
             try {
