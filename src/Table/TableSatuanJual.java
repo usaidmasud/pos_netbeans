@@ -5,7 +5,7 @@
  */
 package Table;
 
-import Entity.Satuan;
+import Entity.SatuanJual;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -13,11 +13,11 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author mediatama
  */
-public class TableSatuan extends AbstractTableModel{
+public class TableSatuanJual extends AbstractTableModel{
     
-    List<Satuan> mlist;
+    List<SatuanJual> mlist;
 
-    public TableSatuan(List<Satuan> mlist) {
+    public TableSatuanJual(List<SatuanJual> mlist) {
         this.mlist = mlist;
     }
     
@@ -45,7 +45,7 @@ public class TableSatuan extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return mlist.get(rowIndex).getNama_satuan();
+                return mlist.get(rowIndex).getNama_satuan_jual();
             default:
                 return null;
         }

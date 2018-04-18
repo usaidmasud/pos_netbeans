@@ -7,28 +7,28 @@ package Entity;
 
 /**
  *
- * @author mediatama
+ * @author usaid
  */
-public class Satuan {
-    private int kode_satuan;
-    private String nama_satuan;
+public class Kategori {
+    private int kode_kategori;
+    private String nama_kategori;
     private String tgl_create;
     private String tgl_update;
 
-    public int getKode_satuan() {
-        return kode_satuan;
+    public int getKode_kategori() {
+        return kode_kategori;
     }
 
-    public void setKode_satuan(int kode_satuan) {
-        this.kode_satuan = kode_satuan;
+    public void setKode_kategori(int kode_kategori) {
+        this.kode_kategori = kode_kategori;
     }
 
-    public String getNama_satuan() {
-        return nama_satuan;
+    public String getNama_kategori() {
+        return nama_kategori;
     }
 
-    public void setNama_satuan(String nama_satuan) {
-        this.nama_satuan = nama_satuan;
+    public void setNama_kategori(String nama_kategori) {
+        this.nama_kategori = nama_kategori;
     }
 
     public String getTgl_create() {

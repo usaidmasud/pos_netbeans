@@ -12,16 +12,16 @@ import javax.swing.JTable;
  *
  * @author mediatama
  */
-public class FormSatuan extends javax.swing.JInternalFrame {
+public class FormSatuanBeli extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FormSatuan
      */
-    Controller.ConSatuan control;
+    Controller.ConSatuanBeli control;
     
-    public FormSatuan() {
+    public FormSatuanBeli() {
         initComponents();
-        control = new Controller.ConSatuan(this);
+        control = new Controller.ConSatuanBeli(this);
     }
 
     /**
@@ -41,7 +41,7 @@ public class FormSatuan extends javax.swing.JInternalFrame {
         btnHapus = new javax.swing.JButton();
 
         setClosable(true);
-        setTitle("Form Satuan");
+        setTitle("Form Satuan Beli");
 
         Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

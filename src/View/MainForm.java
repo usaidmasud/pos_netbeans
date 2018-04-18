@@ -42,7 +42,9 @@ public class MainForm extends javax.swing.JFrame {
         menuItemLogout = new javax.swing.JMenuItem();
         menuMaster = new javax.swing.JMenu();
         menuItemBarang = new javax.swing.JMenuItem();
-        menuItemSatuan = new javax.swing.JMenuItem();
+        menuItemSatuanBeli = new javax.swing.JMenuItem();
+        menuItemSatuanJual = new javax.swing.JMenuItem();
+        menuItemKategori = new javax.swing.JMenuItem();
         menuItemJabatan = new javax.swing.JMenuItem();
         menuItemGroup = new javax.swing.JMenuItem();
         menuItemHakAkses = new javax.swing.JMenuItem();
@@ -99,13 +101,29 @@ public class MainForm extends javax.swing.JFrame {
         menuItemBarang.setText("Barang");
         menuMaster.add(menuItemBarang);
 
-        menuItemSatuan.setText("Satuan");
-        menuItemSatuan.addActionListener(new java.awt.event.ActionListener() {
+        menuItemSatuanBeli.setText("Satuan Beli");
+        menuItemSatuanBeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemSatuanActionPerformed(evt);
+                menuItemSatuanBeliActionPerformed(evt);
             }
         });
-        menuMaster.add(menuItemSatuan);
+        menuMaster.add(menuItemSatuanBeli);
+
+        menuItemSatuanJual.setText("Satuan Jual");
+        menuItemSatuanJual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemSatuanJualActionPerformed(evt);
+            }
+        });
+        menuMaster.add(menuItemSatuanJual);
+
+        menuItemKategori.setText("Kategori");
+        menuItemKategori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemKategoriActionPerformed(evt);
+            }
+        });
+        menuMaster.add(menuItemKategori);
 
         menuItemJabatan.setText("Jabatan");
         menuMaster.add(menuItemJabatan);
@@ -178,30 +196,58 @@ public class MainForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuItemSatuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSatuanActionPerformed
+    private void menuItemSatuanBeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSatuanBeliActionPerformed
         // TODO add your handling code here:
         try{  
             boolean status=false;  
             javax.swing.JInternalFrame[] children;  
             children=DesktopPane.getAllFrames();  
             for (JInternalFrame f:children){  
-              if(f.getTitle().equals("Form Satuan")){  
+              if(f.getTitle().equals("Form Satuan Beli")){  
                 f.setSelected(true);  
                 status=true;  
                 break;  
               }  
             }  
             if (status==false){  
-              View.FormSatuan form1=new View.FormSatuan();
-              DesktopPane.add(form1);  
-              form1.setVisible(true);  
+              View.FormSatuanBeli form = new View.FormSatuanBeli();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
             }  
           }  
           catch(PropertyVetoException e){  
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
-          }  
+          }
         
-    }//GEN-LAST:event_menuItemSatuanActionPerformed
+    }//GEN-LAST:event_menuItemSatuanBeliActionPerformed
+
+    private void menuItemSatuanJualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSatuanJualActionPerformed
+        // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form Satuan Jual")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormSatuanJual form = new View.FormSatuanJual();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }
+    }//GEN-LAST:event_menuItemSatuanJualActionPerformed
+
+    private void menuItemKategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemKategoriActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuItemKategoriActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,9 +317,11 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemGroup;
     private javax.swing.JMenuItem menuItemHakAkses;
     private javax.swing.JMenuItem menuItemJabatan;
+    private javax.swing.JMenuItem menuItemKategori;
     private javax.swing.JMenuItem menuItemLogout;
     private javax.swing.JMenuItem menuItemPegawai;
-    private javax.swing.JMenuItem menuItemSatuan;
+    private javax.swing.JMenuItem menuItemSatuanBeli;
+    private javax.swing.JMenuItem menuItemSatuanJual;
     private javax.swing.JMenuItem menuItemSupplier;
     private javax.swing.JMenuItem menuItemTransaksiHutang;
     private javax.swing.JMenuItem menuItemTransaksiPembelian;

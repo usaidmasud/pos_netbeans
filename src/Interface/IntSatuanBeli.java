@@ -5,18 +5,18 @@
  */
 package Interface;
 
-import Entity.Satuan;
+import Entity.SatuanBeli;
 import java.util.List;
 
 /**
  *
  * @author mediatama
  */
-public interface IntSatuan {
-    public void insert(Satuan satuan);
-    public void update(Satuan satuan);
+public interface IntSatuanBeli {
+    public void insert(SatuanBeli satuan);
+    public void update(SatuanBeli satuan);
     public void delete(int keyWord);
-    public List<Satuan> get_all();
-    public List<Satuan> get_by_keyword(String keyWord);
+    public List<SatuanBeli> get_all();
+    public List<SatuanBeli> get_by_keyword(String keyWord);
     public boolean cek_nama_satuan(String keyWord);
 }
