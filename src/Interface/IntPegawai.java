@@ -15,7 +15,7 @@ import java.util.List;
 public interface IntPegawai {
     public void insert(Pegawai obj);
     public void update(Pegawai obj);
-    public void delete(int keyWord);
+    public void delete(String keyWord);
     public List<Pegawai> get_all();
     public List<Pegawai> get_by_keyword(String keyWord);
 }

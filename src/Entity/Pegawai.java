@@ -14,6 +14,7 @@ public class Pegawai {
     private String nama_pegawai;
     private String gender;
     private String alamat;
+    private String no_telpon;
     private String email;
     private String avatar;
     private int kode_jabatan;
@@ -91,6 +92,15 @@ public class Pegawai {
     public void setTgl_update(String tgl_update) {
         this.tgl_update = tgl_update;
     }
+
+    public String getNo_telpon() {
+        return no_telpon;
+    }
+
+    public void setNo_telpon(String no_telpon) {
+        this.no_telpon = no_telpon;
+    }
+    
     
     
 }

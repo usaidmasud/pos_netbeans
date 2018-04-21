@@ -80,12 +80,22 @@ public class MainForm extends javax.swing.JFrame {
         menuFile.setText("File");
 
         menuItemCustomer.setText("Customer");
+        menuItemCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemCustomerActionPerformed(evt);
+            }
+        });
         menuFile.add(menuItemCustomer);
 
         menuItemSupplier.setText("Supplier");
         menuFile.add(menuItemSupplier);
 
         menuItemPegawai.setText("Pegawai");
+        menuItemPegawai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemPegawaiActionPerformed(evt);
+            }
+        });
         menuFile.add(menuItemPegawai);
 
         menuItemUser.setText("User");
@@ -249,65 +259,55 @@ public class MainForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menuItemKategoriActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void menuItemPegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPegawaiActionPerformed
+        // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form Pegawai")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormPegawai form = new View.FormPegawai();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }
+    }//GEN-LAST:event_menuItemPegawaiActionPerformed
 
-        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Form().setVisible(true);
-//            }
-//        });
-        //</editor-fold>
+    private void menuItemCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCustomerActionPerformed
+        // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form Customer")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormCustomer form = new View.FormCustomer();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }
+    }//GEN-LAST:event_menuItemCustomerActionPerformed
 
-        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Form().setVisible(true);
-//            }
-//        });
-        //</editor-fold>
-
-        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Form().setVisible(true);
-//            }
-//        });
-        //</editor-fold>
-
-        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Form().setVisible(true);
-//            }
-//        });
-    }
-
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopPane;
     private javax.swing.JMenuBar jMenuBar1;
