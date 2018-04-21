@@ -5,6 +5,7 @@
  */
 package View;
 
+import java.awt.Dimension;
 import java.beans.PropertyVetoException;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
@@ -222,6 +223,7 @@ public class MainForm extends javax.swing.JFrame {
             if (status==false){  
               View.FormSatuanBeli form = new View.FormSatuanBeli();
               DesktopPane.add(form);  
+              formTengah(form);
               form.setVisible(true);  
             }  
           }  
@@ -247,6 +249,7 @@ public class MainForm extends javax.swing.JFrame {
             if (status==false){  
               View.FormSatuanJual form = new View.FormSatuanJual();
               DesktopPane.add(form);  
+              formTengah(form);
               form.setVisible(true);  
             }  
           }  
@@ -275,6 +278,7 @@ public class MainForm extends javax.swing.JFrame {
             if (status==false){  
               View.FormPegawai form = new View.FormPegawai();
               DesktopPane.add(form);  
+              formTengah(form);
               form.setVisible(true);  
             }  
           }  
@@ -297,16 +301,18 @@ public class MainForm extends javax.swing.JFrame {
               }  
             }  
             if (status==false){  
-              View.FormCustomer form = new View.FormCustomer();
-              DesktopPane.add(form);  
-              form.setVisible(true);  
+                View.FormCustomer form = new View.FormCustomer();
+                DesktopPane.add(form);
+                formTengah(form);
+                form.setVisible(true);  
             }  
           }  
           catch(PropertyVetoException e){  
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
           }
     }//GEN-LAST:event_menuItemCustomerActionPerformed
-
+    
+    
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopPane;
@@ -340,4 +346,10 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JMenu menuMaster;
     private javax.swing.JMenu menuTransaksi;
     // End of variables declaration//GEN-END:variables
+
+    private void formTengah(JInternalFrame form) {
+        Dimension parentSize = DesktopPane.getSize();
+        Dimension childSize = form.getSize();
+        form.setLocation((parentSize.width - childSize.width)/2, (parentSize.height - childSize.height)/2);
+    }
 }
