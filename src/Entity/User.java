@@ -9,11 +9,12 @@ package Entity;
  *
  * @author usaid
  */
-public class User {
+public class User extends Group{
     private String kode_user;
     private String username;
     private String password;
-    private int kode_pegawai;
+    private int status;
+    private String kode_pegawai;
     private int kode_group;
     private String tgl_create;
     private String tgl_update;
@@ -42,11 +43,11 @@ public class User {
         this.password = password;
     }
 
-    public int getKode_pegawai() {
+    public String getKode_pegawai() {
         return kode_pegawai;
     }
 
-    public void setKode_pegawai(int kode_pegawai) {
+    public void setKode_pegawai(String kode_pegawai) {
         this.kode_pegawai = kode_pegawai;
     }
 
@@ -72,6 +73,14 @@ public class User {
 
     public void setTgl_update(String tgl_update) {
         this.tgl_update = tgl_update;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
     
     

@@ -28,13 +28,15 @@ public class TableSatuanJual extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        return 1;
+        return 2;
     }
     
     @Override
     public String getColumnName(int column) {
         switch (column) {
             case 0:
+                return "No";
+            case 1:
                 return "Satuan Barang";
             default:
                 return null;
@@ -45,6 +47,8 @@ public class TableSatuanJual extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch (columnIndex) {
             case 0:
+                return (rowIndex++ +1);
+            case 1:
                 return mlist.get(rowIndex).getNama_satuan_jual();
             default:
                 return null;

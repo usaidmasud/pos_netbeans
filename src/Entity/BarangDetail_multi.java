@@ -9,7 +9,7 @@ package Entity;
  *
  * @author usaid
  */
-public class BarangDetail extends Barang{
+public class BarangDetail_multi extends Barang{
     private String barcode;
     private String nama_barang;
     private int kode_satuan_jual;

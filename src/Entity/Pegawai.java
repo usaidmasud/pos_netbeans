@@ -9,7 +9,7 @@ package Entity;
  *
  * @author usaid
  */
-public class Pegawai {
+public class Pegawai{
     private String kode_pegawai;
     private String nama_pegawai;
     private String gender;

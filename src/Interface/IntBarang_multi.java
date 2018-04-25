@@ -5,17 +5,17 @@
  */
 package Interface;
 
-import Entity.BarangDetail;
+import Entity.Barang;
 import java.util.List;
 
 /**
  *
  * @author usaid
  */
-public interface IntBarangDetail {
-    public void insert(BarangDetail obj);
-    public void update(BarangDetail obj);
+public interface IntBarang_multi {
+    public void insert(Barang obj);
+    public void update(Barang obj);
     public void delete(int keyWord);
-    public List<BarangDetail> get_all();
-    public List<BarangDetail> get_by_keyword(String keyWord);
+    public List<Barang> get_all();
+    public List<Barang> get_by_keyword(String keyWord);
 }

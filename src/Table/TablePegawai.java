@@ -57,7 +57,7 @@ public class TablePegawai extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return rowIndex++;
+                return (rowIndex++ +1);
             case 1:
                 return mlist.get(rowIndex).getNama_pegawai();
             case 2:

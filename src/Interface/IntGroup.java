@@ -18,4 +18,7 @@ public interface IntGroup {
     public void delete(int keyWord);
     public List<Group> get_all();
     public List<Group> get_by_keyword(String keyWord);
+    public boolean cek_nama_group(String keyWord);
+    public int get_kode(String keyWord);
+    public String get_nama(int keyWord);
 }

@@ -15,7 +15,9 @@ import java.util.List;
 public interface IntUser {
     public void insert(User obj);
     public void update(User obj);
-    public void delete(int keyWord);
+    public void delete(String keyWord);
+    public void aktif(int keyWord);
     public List<User> get_all();
     public List<User> get_by_keyword(String keyWord);
+    public String get_kode_user();
 }

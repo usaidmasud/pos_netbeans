@@ -21,7 +21,7 @@ public class ConnectDB {
             MysqlDataSource data = new MysqlDataSource();
             data.setDatabaseName("rc_pos");
             data.setUser("root");
-            data.setPassword("root");
+            data.setPassword("");
             try {
                 con = data.getConnection();
             } catch (SQLException ex) {

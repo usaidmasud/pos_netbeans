@@ -18,4 +18,6 @@ public interface IntPegawai {
     public void delete(String keyWord);
     public List<Pegawai> get_all();
     public List<Pegawai> get_by_keyword(String keyWord);
+    public String get_kode(String keyWord);
+    public String get_nama(String keyWord);
 }

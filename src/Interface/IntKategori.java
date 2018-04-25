@@ -18,4 +18,5 @@ public interface IntKategori {
     public void delete(int keyWord);
     public List<Kategori> get_all();
     public List<Kategori> get_by_keyword(String keyWord);
+    public boolean cek_nama_kategori(String keyWord);
 }

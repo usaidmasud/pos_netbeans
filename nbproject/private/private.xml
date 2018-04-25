@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/PEMROGRAMAN/DESKTOP/pos_netbeans/src/View/FormSatuanJual.java</file>
-            <file>file:/D:/PEMROGRAMAN/DESKTOP/pos_netbeans/src/View/MainForm.java</file>
-            <file>file:/D:/PEMROGRAMAN/DESKTOP/pos_netbeans/src/Controller/ConSatuanJual.java</file>
-            <file>file:/D:/PEMROGRAMAN/DESKTOP/pos_netbeans/src/Implement/ImplSatuanJual.java</file>
-            <file>file:/D:/PEMROGRAMAN/DESKTOP/pos_netbeans/src/Table/TableSatuanJual.java</file>
-            <file>file:/D:/PEMROGRAMAN/DESKTOP/pos_netbeans/src/View/FormSatuanBeli.java</file>
+            <file>file:/home/njang/NetBeansProjects/pos_netbeans/src/Interface/IntStok.java</file>
+            <file>file:/home/njang/NetBeansProjects/pos_netbeans/src/View/MainForm.java</file>
+            <file>file:/home/njang/NetBeansProjects/pos_netbeans/src/Table/TableStok.java</file>
+            <file>file:/home/njang/NetBeansProjects/pos_netbeans/src/Entity/Barang_multi.java</file>
+            <file>file:/home/njang/NetBeansProjects/pos_netbeans/src/Entity/Stok.java</file>
+            <file>file:/home/njang/NetBeansProjects/pos_netbeans/src/Implement/ImplStok.java</file>
+            <file>file:/home/njang/NetBeansProjects/pos_netbeans/src/View/FormStok.java</file>
+            <file>file:/home/njang/NetBeansProjects/pos_netbeans/src/Controller/ConStok.java</file>
         </group>
     </open-files>
 </project-private>

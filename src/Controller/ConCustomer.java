@@ -7,6 +7,7 @@ package Controller;
 
 import Implement.ImplCustomer;
 import Entity.Customer;
+import Helper.MyHelper;
 import Table.TableCustomer;
 import View.FormCustomer;
 import java.util.List;
@@ -33,6 +34,7 @@ public class ConCustomer {
     public void dataTable() {
         TableCustomer table = new TableCustomer(mlist);
         form.getTable().setModel(table);
+        MyHelper.autoResize(form.getTable());
     }
     
     public void add() {

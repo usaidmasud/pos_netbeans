@@ -18,4 +18,5 @@ public interface IntJabatan {
     public void delete(int keyWord);
     public List<Jabatan> get_all();
     public List<Jabatan> get_by_keyword(String keyWord);
+    public boolean cek_nama_jabatan(String keyWord);
 }

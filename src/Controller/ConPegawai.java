@@ -7,6 +7,7 @@ package Controller;
 
 import Implement.ImplPegawai;
 import Entity.Pegawai;
+import Helper.MyHelper;
 import Table.TablePegawai;
 import View.FormPegawai;
 import java.util.List;
@@ -33,6 +34,7 @@ public class ConPegawai {
     public void dataTable() {
         TablePegawai table = new TablePegawai(mlist);
         form.getTable().setModel(table);
+        MyHelper.autoResize(form.getTable());
     }
     
     public void add() {

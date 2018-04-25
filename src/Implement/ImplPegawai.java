@@ -40,6 +40,8 @@ public class ImplPegawai implements Interface.IntPegawai{
     final String delete = "DELETE FROM tb_pegawai where kode_pegawai = ? ;";
     final String select = "SELECT * FROM tb_pegawai;";
     final String carinama = "SELECT * FROM tb_pegawai where nama_pegawai like ?";
+    final String query_get_kode = "SELECT kode_pegawai FROM tb_pegawai where nama_pegawai = ?";
+    final String query_get_nama = "SELECT nama_pegawai FROM tb_pegawai where kode_pegawai = ?";
     
     PreparedStatement ps;
     Statement st;
@@ -176,5 +178,39 @@ public class ImplPegawai implements Interface.IntPegawai{
         }
 
         return mlist;
+    }
+
+    @Override
+    public String get_kode(String keyWord) {
+        String kode = "";
+        try {
+            ps = connection.prepareStatement(query_get_kode);
+            ps.setString(1, keyWord);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                kode = rs.getString("kode_pegawai");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ImplPegawai.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return kode;
+    }
+
+    @Override
+    public String get_nama(String keyWord) {
+        String kode = "";
+        try {
+            ps = connection.prepareStatement(query_get_nama);
+            ps.setString(1, keyWord);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                kode = rs.getString("nama_pegawai");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ImplPegawai.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return kode;
     }
 }

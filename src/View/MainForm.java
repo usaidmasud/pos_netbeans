@@ -5,7 +5,6 @@
  */
 package View;
 
-import java.awt.Dimension;
 import java.beans.PropertyVetoException;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
@@ -89,6 +88,11 @@ public class MainForm extends javax.swing.JFrame {
         menuFile.add(menuItemCustomer);
 
         menuItemSupplier.setText("Supplier");
+        menuItemSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemSupplierActionPerformed(evt);
+            }
+        });
         menuFile.add(menuItemSupplier);
 
         menuItemPegawai.setText("Pegawai");
@@ -100,6 +104,11 @@ public class MainForm extends javax.swing.JFrame {
         menuFile.add(menuItemPegawai);
 
         menuItemUser.setText("User");
+        menuItemUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemUserActionPerformed(evt);
+            }
+        });
         menuFile.add(menuItemUser);
 
         menuItemLogout.setText("Logout");
@@ -110,6 +119,11 @@ public class MainForm extends javax.swing.JFrame {
         menuMaster.setText("Master");
 
         menuItemBarang.setText("Barang");
+        menuItemBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemBarangActionPerformed(evt);
+            }
+        });
         menuMaster.add(menuItemBarang);
 
         menuItemSatuanBeli.setText("Satuan Beli");
@@ -137,9 +151,19 @@ public class MainForm extends javax.swing.JFrame {
         menuMaster.add(menuItemKategori);
 
         menuItemJabatan.setText("Jabatan");
+        menuItemJabatan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemJabatanActionPerformed(evt);
+            }
+        });
         menuMaster.add(menuItemJabatan);
 
         menuItemGroup.setText("Group User");
+        menuItemGroup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemGroupActionPerformed(evt);
+            }
+        });
         menuMaster.add(menuItemGroup);
 
         menuItemHakAkses.setText("Hak Akses Group");
@@ -223,7 +247,6 @@ public class MainForm extends javax.swing.JFrame {
             if (status==false){  
               View.FormSatuanBeli form = new View.FormSatuanBeli();
               DesktopPane.add(form);  
-              formTengah(form);
               form.setVisible(true);  
             }  
           }  
@@ -249,7 +272,6 @@ public class MainForm extends javax.swing.JFrame {
             if (status==false){  
               View.FormSatuanJual form = new View.FormSatuanJual();
               DesktopPane.add(form);  
-              formTengah(form);
               form.setVisible(true);  
             }  
           }  
@@ -260,6 +282,26 @@ public class MainForm extends javax.swing.JFrame {
 
     private void menuItemKategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemKategoriActionPerformed
         // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form Kategori")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormKategori form = new View.FormKategori();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }
     }//GEN-LAST:event_menuItemKategoriActionPerformed
 
     private void menuItemPegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemPegawaiActionPerformed
@@ -278,7 +320,6 @@ public class MainForm extends javax.swing.JFrame {
             if (status==false){  
               View.FormPegawai form = new View.FormPegawai();
               DesktopPane.add(form);  
-              formTengah(form);
               form.setVisible(true);  
             }  
           }  
@@ -301,18 +342,136 @@ public class MainForm extends javax.swing.JFrame {
               }  
             }  
             if (status==false){  
-                View.FormCustomer form = new View.FormCustomer();
-                DesktopPane.add(form);
-                formTengah(form);
-                form.setVisible(true);  
+              View.FormCustomer form = new View.FormCustomer();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
             }  
           }  
           catch(PropertyVetoException e){  
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
           }
     }//GEN-LAST:event_menuItemCustomerActionPerformed
-    
-    
+
+    private void menuItemSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSupplierActionPerformed
+        // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form Supplier")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormSupplier form = new View.FormSupplier();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }
+    }//GEN-LAST:event_menuItemSupplierActionPerformed
+
+    private void menuItemJabatanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemJabatanActionPerformed
+        // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form Jabatan")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormJabatan form = new View.FormJabatan();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }
+    }//GEN-LAST:event_menuItemJabatanActionPerformed
+
+    private void menuItemUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemUserActionPerformed
+        // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form User")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormUser form = new View.FormUser();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }
+    }//GEN-LAST:event_menuItemUserActionPerformed
+
+    private void menuItemGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemGroupActionPerformed
+        // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form Group")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormGroup form = new View.FormGroup();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }
+    }//GEN-LAST:event_menuItemGroupActionPerformed
+
+    private void menuItemBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemBarangActionPerformed
+        // TODO add your handling code here:
+        try{  
+            boolean status=false;  
+            javax.swing.JInternalFrame[] children;  
+            children=DesktopPane.getAllFrames();  
+            for (JInternalFrame f:children){  
+              if(f.getTitle().equals("Form Stok")){  
+                f.setSelected(true);  
+                status=true;  
+                break;  
+              }  
+            }  
+            if (status==false){  
+              View.FormStok form = new View.FormStok();
+              DesktopPane.add(form);  
+              form.setVisible(true);  
+            }  
+          }  
+          catch(PropertyVetoException e){  
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error",  JOptionPane.ERROR_MESSAGE);  
+          }
+    }//GEN-LAST:event_menuItemBarangActionPerformed
+
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopPane;
@@ -346,10 +505,4 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JMenu menuMaster;
     private javax.swing.JMenu menuTransaksi;
     // End of variables declaration//GEN-END:variables
-
-    private void formTengah(JInternalFrame form) {
-        Dimension parentSize = DesktopPane.getSize();
-        Dimension childSize = form.getSize();
-        form.setLocation((parentSize.width - childSize.width)/2, (parentSize.height - childSize.height)/2);
-    }
 }

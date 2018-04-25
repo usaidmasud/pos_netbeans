@@ -32,6 +32,7 @@ public class ConSatuanBeli {
     public void dataTable() {
         TableSatuanBeli table = new TableSatuanBeli(mlist);
         form.getTable().setModel(table);
+        MyHelper.autoResize(form.getTable());
     }
     
     public void btnTambah() {

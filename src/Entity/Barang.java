@@ -11,13 +11,18 @@ package Entity;
  */
 public class Barang {
     private String kode_barang;
+    private String nama_barang;
     private int kode_kategori;
-    private int kode_satuan_beli;
-    private int stok_minimal;
+    private int kode_satuan;
     private int harga_beli;
+    private int harga_jual;
+    private int stok_minimal;
+    private int tgl_beli;
     private String tgl_create;
     private String tgl_update;
+    private String hpp;
 
+    
     public String getKode_barang() {
         return kode_barang;
     }
@@ -34,12 +39,12 @@ public class Barang {
         this.kode_kategori = kode_kategori;
     }
 
-    public int getKode_satuan_beli() {
-        return kode_satuan_beli;
+    public int getKode_satuan() {
+        return kode_satuan;
     }
 
-    public void setKode_satuan_beli(int kode_satuan_beli) {
-        this.kode_satuan_beli = kode_satuan_beli;
+    public void setKode_satuan(int kode_satuan) {
+        this.kode_satuan = kode_satuan;
     }
 
     public int getStok_minimal() {
@@ -72,5 +77,37 @@ public class Barang {
 
     public void setTgl_update(String tgl_update) {
         this.tgl_update = tgl_update;
+    }
+
+    public String getNama_barang() {
+        return nama_barang;
+    }
+
+    public void setNama_barang(String nama_barang) {
+        this.nama_barang = nama_barang;
+    }
+
+    public int getHarga_jual() {
+        return harga_jual;
+    }
+
+    public void setHarga_jual(int harga_jual) {
+        this.harga_jual = harga_jual;
+    }
+
+    public int getTgl_beli() {
+        return tgl_beli;
+    }
+
+    public void setTgl_beli(int tgl_beli) {
+        this.tgl_beli = tgl_beli;
+    }
+
+    public String getHpp() {
+        return hpp;
+    }
+
+    public void setHpp(String hpp) {
+        this.hpp = hpp;
     }
 }
